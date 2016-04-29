@@ -6,7 +6,7 @@ to know in some of my projects.
 # Compiling libraries under Windows
 
 To save time, I use default settings for common libraries in my cmake files.
-Here are sone motes to myself about how to compile these libraries to their
+Here are some motes to myself about how to compile these libraries to their
 (my) default locations
 
 ## OpenSSL
@@ -20,6 +20,7 @@ dll's around, risking all kinds of interesting conflicts between installed
 software. (It's especially convenient to use static libraries during development
 to avoid distractions with DLL HELL).
 
+Open a command shell with the Microsoft Visual Studio environment variables set.
 ```
 cd C:\devel
 git clone https://github.com/openssl/openssl.git
