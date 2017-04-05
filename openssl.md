@@ -16,12 +16,14 @@ The following things needs to be installed:
 - Nasm (I install it to C:\devel)
 
 Open a command shell with the Microsoft Visual Studio environment variables set.
-```
+Build openssl for 64 bit architecture
+
+```sh
 cd C:\devel
 git clone https://github.com/openssl/openssl.git
 cd openssl
 PATH=%PATH%;C:\DEVEL\NASM
-perl Configure  VC-WIN32  --prefix=c:\devel\openssl\lib-386
-nmake -f ms\nt.mak
-nmake -f ms\nt.mak install
+perl Configure VC-WIN64A --prefix=c:\devel\openssl\lib-x64
+nmake
+nmake install
 ```
