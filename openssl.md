@@ -1,14 +1,4 @@
-
-# Compile OpenSSL for Windows
-
-This receipt compiles the latest 32 bit OpenSSL as a static library.
-
-Since people are unlikely to update the openssl dll's each time the openssl
-project patches some really horryfying bugs, it's simpler to release our own
-project when this happends. Then we also don't need to copy the openssl
-dll's around, risking all kinds of interesting conflicts between installed
-software. (It's especially convenient to use static libraries during development
-to avoid distractions with DLL HELL).
+# Compile the latest OpenSSL with Visual Studio
 
 The following things needs to be installed:
 - Microsoft Visual Studio (I use the free community edition)
@@ -16,14 +6,14 @@ The following things needs to be installed:
 - Nasm (I install it to C:\devel)
 
 Open a command shell with the Microsoft Visual Studio environment variables set.
-Build openssl for 64 bit architecture
+
+## Build openssl for 64 bit architecture
 
 ```sh
-cd C:\devel
 git clone https://github.com/openssl/openssl.git
 cd openssl
 PATH=%PATH%;C:\DEVEL\NASM
-perl Configure VC-WIN64A --prefix=c:\devel\openssl\lib-x64
+perl Configure VC-WIN64A
 nmake
 nmake install
 ```
